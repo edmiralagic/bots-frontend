@@ -1,0 +1,30 @@
+<form [formGroup]="form" class="box has-basic-hover-effect">
+  <article class="media">
+    <div class="media-content">
+      <div class="content has-text-centered">
+        <b>{{option.label}}</b>
+        <br>
+        <div class="has-text-left">
+          <small>{{option.description}}</small>
+        </div>
+        <br>
+        <div *ngFor="let question of option.questions">
+          <app-question [question]="question" [form]="form"></app-question>
+          <br>
+        </div>
+        <div class="field">
+          <input (click)="onSubmit()" 
+                [id]="option.id" 
+                type="checkbox" 
+                [name]="option.id" 
+                class="switch is-rounded is-success">
+          <label [for]="option.id"></label>
+        </div>
+      </div>
+    </div>
+  </article>
+</form>
+
+<div *ngIf="payLoad" class="form-row">
+  <strong>Saved the following values</strong><br>{{payload}}
+</div>

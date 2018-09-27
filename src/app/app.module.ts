@@ -11,6 +11,9 @@ import { HowToComponent } from './how-to/how-to.component';
 import { BuildsDomainsComponent } from './builds-domains/builds-domains.component';
 import { BuildsOptionsComponent } from './builds-options/builds-options.component';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { DynamicFormQuestionComponent } from './dynamic-form-question/dynamic-form-question.component';
+import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 
 const routes: Routes = [
   {
@@ -55,12 +58,15 @@ const routes: Routes = [
     SignupComponent,
     HowToComponent,
     BuildsDomainsComponent,
-    BuildsOptionsComponent
+    BuildsOptionsComponent,
+    DynamicFormQuestionComponent,
+    DynamicFormComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

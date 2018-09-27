@@ -1,0 +1,20 @@
+<div [ngSwitch]="question.controlType" [formGroup]="form">
+      <div class="field">
+            <input *ngSwitchCase="'input'" 
+                  class="input" 
+                  [id]="question.id" 
+                  [formControlName]="question.id" 
+                  [type]="question.type" 
+                  [placeholder]="question.label"
+                  [value]="question.value">
+            <textarea *ngSwitchCase="'textarea'" 
+                  class="textarea" 
+                  [id]="question.id" 
+                  [formControlName]="question.id" 
+                  [placeholder]="question.label">
+                  {{question.value}}
+            </textarea>
+      </div>
+</div>
+
+<div class="errorMessage" *ngIf="!isValid">{{question.label}} is required</div>
